@@ -1,15 +1,19 @@
 import { useRouter } from "next/router";
+import { Container, Heading, Text } from "@chakra-ui/react";
 
 const CityInfo = () => {
   const router = useRouter();
   const { id } = router.query; // Get the dynamic 'id' parameter from the URL
 
   return (
-    <div>
-      <h1>City Info for {id}</h1>
+    <Container maxW="2xl">
+      <Heading my="2rem" p="0.7rem" ml="2.2rem">
+        City Info for ID 📃 {id}
+      </Heading>
       {/* Fetch and display city details based on the `id` */}
-      <p>Displaying information for city {id}.</p>
-    </div>
+
+      <Text ml="2rem">Displaying information about the city {id}.</Text>
+    </Container>
   );
 };
 

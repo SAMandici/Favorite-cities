@@ -1,6 +1,7 @@
+import { Container, Heading, Text, Input } from "@chakra-ui/react";
 import { useState } from "react";
 
-export default function SearchPage() {
+const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleInputChange = (event) => {
@@ -8,24 +9,21 @@ export default function SearchPage() {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
-      <h1>Căuta orașe</h1>
-      <p>În această pagină vei putea căuta orașe din întreaga lume.</p>
+    <Container maxW="2xl">
+      <Heading my="2rem" p=".7rem" ml="2.2rem">
+        Search for new cities. 🔍
+      </Heading>
 
-      <input
-        type="text"
-        placeholder="Căuta oraș..."
-        value={searchQuery}
-        onChange={handleInputChange}
-        style={{
-          width: "100%",
-          padding: "10px",
-          fontSize: "16px",
-          borderRadius: "5px",
-          border: "1px solid #ccc",
-          marginTop: "20px",
-        }}
+      <Text ml="2rem">Here you can find cities all around the world.</Text>
+
+      <Input
+        placeholder="Explore cities"
+        m="1.5rem"
+        size="lg"
+        variant="flushed"
       />
-    </div>
+    </Container>
   );
-}
+};
+
+export default SearchPage;
